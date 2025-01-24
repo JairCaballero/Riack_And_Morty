@@ -16,3 +16,93 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+/* Temporal location styles */
+
+.container {
+  max-width: 1280px;
+  height: 100%;
+}
+
+.container-center {
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 70vw;
+  padding: 10px;
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.error-message {
+  color: red;
+}
+
+.container-loader {
+  margin-top: 10px;
+  grid-column: span 4;
+  width: 100%;
+}
+
+.text-loader {
+  text-align: center;
+}
+
+.card-content {
+  max-height: 80vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card-content {
+  scrollbar-width: none;
+}
+
+.card-content::-webkit-scrollbar {
+  display: none;
+}
+
+
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.card > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 5px 10px;
+}
+
+
+
+/* barra de navegacion */
+
+.navbar {
+  background-color: rgb(33, 37, 41);
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+
+.navbar-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: white;
+}

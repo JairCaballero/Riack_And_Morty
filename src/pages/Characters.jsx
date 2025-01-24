@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { getRickAndMoryData } from './services/services'
-import Character from './components/Character'
-import './App.css'
-import Navbar from './components/Navbar'
+import { getRickAndMoryData } from '@/modules/services/services'
+import Character from '@/modules/components/Character'
 
-function App() {
+const Characters = () => {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)
   const [error, setError] = useState('')
@@ -63,27 +61,23 @@ function App() {
   }, [data])
 
   return (
-    <>
-      <Navbar />
-      <div className='container container-center'>
-        <input onChange={onInputChange} type="text" placeholder='Rick Sanchez...' className='search-input' />
-        {error ? (
-          <p className='error-message'>{error}</p>
-        ) : (
-          <div className="card-content">
-            {data.map( (element, index) => (
-              <Character key={index} character={element} />
-            ))}
-            {hasMore && (
-              <div className='container-loader'>
-                <p ref={elementRef} className='text-loader'>cargando mas contenido.....</p>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    </>
+    <div className='container container-center'>
+      <input onChange={onInputChange} type="text" placeholder='Rick Sanchez...' className='search-input' />
+      {error ? (
+        <p className='error-message'>{error}</p>
+      ) : (
+        <div className="card-content">
+          {data.map( (element, index) => (
+            <Character key={index} character={element} />
+          ))}
+          {hasMore && (
+            <div className='container-loader'>
+              <p ref={elementRef} className='text-loader'>cargando mas contenido.....</p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   )
 }
-
-export default App
+export default Characters
