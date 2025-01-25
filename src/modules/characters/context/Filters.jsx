@@ -34,7 +34,7 @@ export const FiltersProvider = ({ children }) => {
   const onSearch = ({ name }) => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => {
-      setHasMore(true)
+      setHasMore(false)
       setSearchValue(name)
       if (error) setError(null)
       setPage(1)

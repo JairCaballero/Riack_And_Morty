@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "@/modules/components/Navbar"
+import { FiltersProvider } from "@/modules/characters/context/Filters"
 
 const PublicLayout = () => {
   return (
-    <div>
-      <Navbar />
-      <Outlet />
-    </div>
+    <FiltersProvider>
+      <div>
+        <Navbar />
+        <Outlet />
+      </div>
+    </FiltersProvider>
   )
 }
 export default PublicLayout

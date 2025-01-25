@@ -5,24 +5,24 @@ import LoaderData from "@/modules/components/LoaderData";
 
 const Characters = () => {
   const { characters, error, hasMore, setPage } = useContext(FiltersContext);
-  const elementRef = useRef(null);
-  const observerRef = useRef(null);
+  const elementRef = useRef(null)
+  const observerRef = useRef(null)
 
   const onInterceptor = (entries) => {
-    const firstEntry = entries[0];
+    const firstEntry = entries[0]
     if (firstEntry.isIntersecting && hasMore) {
-      setPage((prevPage) => prevPage + 1);
+      setPage((prevPage) => prevPage + 1)
     }
   };
 
   useEffect(() => {
-    if (observerRef.current) observerRef.current.disconnect();
+    if (observerRef.current) observerRef.current.disconnect()
 
-    observerRef.current = new IntersectionObserver(onInterceptor);
-    if (elementRef.current) observerRef.current.observe(elementRef.current);
+    observerRef.current = new IntersectionObserver(onInterceptor)
+    if (elementRef.current) observerRef.current.observe(elementRef.current)
 
-    return () => observerRef.current?.disconnect();
-  }, [hasMore]);
+    return () => observerRef.current?.disconnect()
+  }, [hasMore])
 
   return (
     <div className="container container-center" style={{ marginTop: "50px", padding: "0 15px" }}>
