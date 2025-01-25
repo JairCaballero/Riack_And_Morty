@@ -1,5 +1,5 @@
 import PublicLayout from "@/modules/components/layouts/PublicLayout"
-import { PublicRoutes } from "@/modules/router/routes"
+import { PublicRoutes } from "@/modules/core/router/routes"
 import CharacterID from "@/pages/CharacterID"
 import Characters from "@/pages/Characters"
 import { createBrowserRouter } from "react-router-dom"
