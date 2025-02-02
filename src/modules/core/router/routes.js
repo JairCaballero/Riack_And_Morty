@@ -1,4 +1,4 @@
 export const PublicRoutes = {
   character: '/',
-  characterID: 'characterID'
+  characterID: 'character'
 }

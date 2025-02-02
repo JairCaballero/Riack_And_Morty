@@ -1,16 +1,19 @@
+import { PublicRoutes } from "@/modules/core/router/routes"
+import { Link } from "react-router-dom"
+
 const Character = ({ character }) => {
-  const { image, name, location, species } = character
+  const { image, name, location, species, id } = character
 
   return (
-    <div className="card">
-      <img src={image} alt="imagen" />
+    <Link className="card" to={`${PublicRoutes.characterID}/${id}`}>
+      <img src={image} alt="imagen" loading="lazy" />
       <div className="card-body">
         <h3>{name}</h3>
         <hr />
         <p>Location: {location.name}</p>
         <p>Species: {species}</p>
       </div>
-    </div>
+    </Link>
   )
 }
 
