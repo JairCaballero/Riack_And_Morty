@@ -1,0 +1,15 @@
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.card > img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.card_body {
+  padding: 5px 10px;
+}

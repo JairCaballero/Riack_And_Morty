@@ -3,6 +3,7 @@ import { useContext, useRef, useEffect } from "react";
 import { FiltersContext } from "@/modules/characters/context/Filters"
 import LoaderData from "@/shared/components/loader/LoaderData"
 import CharacterList from "@/modules/characters/components/CharacterList/CharacterList"
+import "./PagesStyles.css"
 
 const Characters = () => {
   const { characters, error, hasMore, setPage } = useContext(FiltersContext);
@@ -26,7 +27,7 @@ const Characters = () => {
   }, [hasMore])
 
   return (
-    <div className="container container-center" style={{ marginTop: "50px", padding: "0 15px" }}>
+    <div className="container container-center characters-container">
       {error ? (
         <div>
           {characters?.length === 0 ? (

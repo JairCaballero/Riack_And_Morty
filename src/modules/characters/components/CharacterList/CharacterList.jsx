@@ -1,8 +1,9 @@
 import CharacterCard from "@/modules/characters/components/CharacterCard/CharacterCard"
+import styles from './CharacterList.module.css'
 
 const CharacterList = ({ characters = [] }) => {
   return (
-    <div className="card-content">
+    <div className={styles.characters_list}>
       {characters.map((character, index) => (
         <CharacterCard key={index} character={character} />
       ))}

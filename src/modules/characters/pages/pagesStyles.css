@@ -1,0 +1,94 @@
+/* Page -> Characters */
+
+.characters-container {
+  margin-top: 50px !important;
+  padding: 0 15px;
+}
+
+/* Page -> CharacterDetail */
+
+
+/* Contenedor principal del componente */
+.character-detail {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+/* Contenedor para el estado de carga */
+.character-loading {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Placeholder para la imagen en loading */
+.loading-placeholder-image {
+  width: 100%;
+  height: 300px;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Placeholders para las líneas de texto en loading */
+.loading-placeholder-text {
+  height: 16px;
+  background-color: #ddd;
+  margin: 8px auto;
+  border-radius: 4px;
+}
+
+/* Variante para placeholder con ancho largo */
+.loading-placeholder-text.long {
+  width: 80%;
+}
+
+/* Variante para placeholder con ancho corto */
+.loading-placeholder-text.short {
+  width: 60%;
+}
+
+/* Título principal del detalle del personaje */
+.character-detail-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Contenedor de la información del personaje (imagen e info) */
+.character-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Estilo para la imagen del personaje */
+.character-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Contenedor para la información textual del personaje */
+.character-info {
+  /* Puedes agregar estilos adicionales si lo requieres */
+}
+
+/* Título de la información del personaje (nombre) */
+.character-info-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Título para la sección de episodios */
+.character-episodes-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para el mensaje cuando no hay datos disponibles */
+.character-no-data {
+  text-align: center;
+  color: gray;
+}

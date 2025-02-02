@@ -1,7 +1,9 @@
+import styles from './LoaderData.module.css'
+
 const LoaderData = () => {
   return (
-    <div className='container-loader'>
-      <p className='text-loader'>Cargando más contenido...</p>
+    <div className={styles.container_loader}>
+      <p className={styles.text_loader}>Cargando más contenido...</p>
     </div>
   )
 }
