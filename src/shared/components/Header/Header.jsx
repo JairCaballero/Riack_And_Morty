@@ -1,6 +1,6 @@
-import SearchCharacter from "@/modules/components/layouts/SearchCharacter"
+import SearchCharacter from "@/shared/components/search/SearchCharacter"
 
-const Navbar = () => {
+const Header = () => {
 
   return (
     <nav className="navbar">
@@ -16,4 +16,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header

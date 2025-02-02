@@ -1,6 +1,7 @@
-import { getCharacter } from "@/modules/core/services/services"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+
+import { getCharacter } from "@/modules/characters/services/characterServices"
 
 const CharacterDetail = () => {
   const { id } = useParams()

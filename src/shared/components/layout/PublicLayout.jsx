@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
-import Navbar from "@/modules/components/PublicHeader/Navbar"
 import { FiltersProvider } from "@/modules/characters/context/Filters"
+import Header from "@/shared/components/Header/Header"
 
 const PublicLayout = () => {
   return (
     <FiltersProvider>
       <div>
-        <Navbar />
+        <Header />
         <Outlet />
       </div>
     </FiltersProvider>

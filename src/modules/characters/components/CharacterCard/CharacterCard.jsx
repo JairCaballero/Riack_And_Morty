@@ -1,7 +1,7 @@
-import { PublicRoutes } from "@/modules/core/router/routes"
+import { PublicRoutes } from "@/router/routes"
 import { Link } from "react-router-dom"
 
-const Character = ({ character }) => {
+const CharacterCard = ({ character }) => {
   const { image, name, location, species, id } = character
 
   return (
@@ -17,4 +17,4 @@ const Character = ({ character }) => {
   )
 }
 
-export default Character
+export default CharacterCard

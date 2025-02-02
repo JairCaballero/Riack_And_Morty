@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react"
-import { getRickAndMoryData } from "@/modules/core/services/services"
+import { getRickAndMoryData } from "@/modules/characters/services/characterServices"
 
 export const FiltersContext = createContext()
 

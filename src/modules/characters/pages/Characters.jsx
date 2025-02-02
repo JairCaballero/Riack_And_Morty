@@ -1,7 +1,8 @@
 import { useContext, useRef, useEffect } from "react";
-import { FiltersContext } from "@/modules/characters/context/Filters";
-import Character from "@/modules/components/Character";
-import LoaderData from "@/modules/components/LoaderData";
+
+import { FiltersContext } from "@/modules/characters/context/Filters"
+import LoaderData from "@/shared/components/loader/LoaderData"
+import CharacterList from "@/modules/characters/components/CharacterList/CharacterList"
 
 const Characters = () => {
   const { characters, error, hasMore, setPage } = useContext(FiltersContext);
@@ -36,11 +37,7 @@ const Characters = () => {
         </div>
       ) : (
         <>
-          <div className="card-content">
-            {characters.map((character, index) => (
-              <Character key={index} character={character} />
-            ))}
-          </div>
+          <CharacterList characters={characters} />
           {hasMore && (
             <div ref={elementRef}>
               <LoaderData />
