@@ -5,6 +5,7 @@ export const FiltersContext = createContext()
 
 export const FiltersProvider = ({ children }) => {
   const [characters, setCharacters] = useState([])
+  const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
   const [error, setError] = useState(null)
   const [searchValue, setSearchValue] = useState('')
@@ -12,7 +13,9 @@ export const FiltersProvider = ({ children }) => {
   const debounceRef = useRef(null)
 
   const getData = async () => {
+    setLoading(true)
     const response = await getRickAndMoryData({ page, name: searchValue })
+    setLoading(false)
 
     if (response.error) {
       setPage(1)
@@ -29,11 +32,12 @@ export const FiltersProvider = ({ children }) => {
     } else {
       setHasMore(false)
     }
-  };
+  }
 
   const onSearch = ({ name }) => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
     debounceRef.current = setTimeout(() => {
+      setCharacters([])
       setHasMore(false)
       setSearchValue(name)
       if (error) setError(null)
@@ -52,6 +56,7 @@ export const FiltersProvider = ({ children }) => {
         error,
         searchValue,
         hasMore,
+        loading,
         setPage,
         onSearch,
       }}>

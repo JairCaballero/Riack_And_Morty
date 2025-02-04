@@ -1,11 +1,16 @@
 .container_loader {
-  height: 100px;
+  height: 50px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ddd;
+  border-radius: 10px;
 }
 
 .text_loader {
+  color: #333;
   text-align: center;
+  font-weight: 600;
+  margin: 0 10px;
 }

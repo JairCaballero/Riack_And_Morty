@@ -2,6 +2,7 @@
 
 .characters-container {
   margin-top: 50px !important;
+  margin-bottom: 20px !important;
   padding: 0 15px;
 }
 
@@ -70,11 +71,6 @@
   object-fit: cover;
 }
 
-/* Contenedor para la información textual del personaje */
-.character-info {
-  /* Puedes agregar estilos adicionales si lo requieres */
-}
-
 /* Título de la información del personaje (nombre) */
 .character-info-title {
   font-size: 22px;
@@ -91,4 +87,10 @@
 .character-no-data {
   text-align: center;
   color: gray;
+}
+
+@media (width >= 1536px) {
+  .characters-container {
+    padding: 0;
+  }
 }

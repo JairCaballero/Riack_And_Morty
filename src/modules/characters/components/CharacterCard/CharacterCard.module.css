@@ -1,3 +1,48 @@
+/* Skeleton Loader */
+
+.skeleton {
+  background-color: #f0f0f0;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.imageSkeleton {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #ddd;
+}
+
+.textSkeleton {
+  background-color: #ddd;
+  height: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+  width: 80%;
+}
+
+.titleSkeleton {
+  height: 20px;
+  width: 60%;
+}
+
+.skeletonCircle {
+  background-color: #ddd;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+/* Card */
+
 .card {
   overflow: hidden;
   border-radius: 10px;
@@ -6,7 +51,7 @@
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .card img {
@@ -22,6 +67,7 @@
   padding: 10px;
   gap: 20px;
   height: 100%;
+  width: 100%;
   justify-content: center;
 }
 
@@ -67,6 +113,11 @@
   }
 
   .card img {
+    width: 200px;
+    aspect-ratio: 1/1;
+  }
+
+  .imageSkeleton {
     width: 200px;
     aspect-ratio: 1/1;
   }

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 
 import { getCharacter } from "@/modules/characters/services/characterServices"
 import "./PagesStyles.css"
+import SkeletonLoaderDetail from "@/modules/characters/components/SkeletonLoaderDetail/SkeletonLoaderDetail";
 
 const CharacterDetail = () => {
   const { id } = useParams()
@@ -30,11 +31,7 @@ const CharacterDetail = () => {
   return (
     <div className="character-detail">
       {loading ? (
-        <div className="character-loading">
-          <div className="loading-placeholder-image" />
-          <div className="loading-placeholder-text long" />
-          <div className="loading-placeholder-text short" />
-        </div>
+        <SkeletonLoaderDetail />
       ) : data ? (
         <>
           <h1 className="character-detail-title">Character Detail</h1>
