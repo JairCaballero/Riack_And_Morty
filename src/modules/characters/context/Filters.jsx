@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { getRickAndMoryData } from "@/modules/characters/services/characterServices"
 
 export const FiltersContext = createContext()
@@ -10,7 +10,6 @@ export const FiltersProvider = ({ children }) => {
   const [error, setError] = useState(null)
   const [searchValue, setSearchValue] = useState('')
   const [hasMore, setHasMore] = useState(false)
-  const debounceRef = useRef(null)
 
   const getData = async () => {
     setLoading(true)
@@ -35,14 +34,11 @@ export const FiltersProvider = ({ children }) => {
   }
 
   const onSearch = ({ name }) => {
-    if (debounceRef.current) clearTimeout(debounceRef.current)
-    debounceRef.current = setTimeout(() => {
-      setCharacters([])
-      setHasMore(false)
-      setSearchValue(name)
-      if (error) setError(null)
-      setPage(1)
-    }, 700)
+    setCharacters([])
+    setHasMore(false)
+    setSearchValue(name)
+    if (error) setError(null)
+    setPage(1)
   }
 
   useEffect(() => {
