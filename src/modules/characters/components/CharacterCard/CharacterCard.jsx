@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { PublicRoutes } from "@/router/routes"
 import styles from './CharacterCard.module.css'
+import { SeparteText } from "@/utils/SeparateText"
 
 const TypeStatus = {
   alive: 'Alive',
@@ -12,7 +13,7 @@ const CharacterCard = ({ character }) => {
   const { image, name, location, id, status, species, type } = character
 
   return (
-    <Link className={styles.card} to={`${PublicRoutes.characterID}/${id}`}>
+    <Link className={styles.card} to={`${PublicRoutes.characterID}/${SeparteText(name).toLowerCase()}-${id}`}>
       <div>
         <img
           src={image}

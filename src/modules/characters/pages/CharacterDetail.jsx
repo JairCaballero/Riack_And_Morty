@@ -11,9 +11,11 @@ const CharacterDetail = () => {
   const [loading, setLoading] = useState(true)
 
   const getData = async () => {
+    const SeparateId = id.split('-').at(-1)
+
     setLoading(true)
     try {
-      const response = await getCharacter({ id });
+      const response = await getCharacter({ id: SeparateId })
       const { image, name, status, species, gender, type, url, origin, episode, created, location } = response;
       setData({ image, name, status, species, gender, type, url, origin, episode, created, location });
     } catch (error) {
@@ -25,7 +27,7 @@ const CharacterDetail = () => {
   }
 
   useEffect(() => {
-    getData();
+    getData()
   }, [])
 
   return (
