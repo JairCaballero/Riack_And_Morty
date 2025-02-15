@@ -11,10 +11,11 @@
 
 /* Contenedor principal del componente */
 .character-detail {
-  max-width: 800px;
+  max-width: 900px;
   margin: 20px auto;
   padding: 16px;
-  background-color: #f9f9f9;
+  height: auto;
+  max-height: 90vh;
 }
 
 /* Contenedor para el estado de carga */
@@ -52,29 +53,31 @@
 
 /* Título principal del detalle del personaje */
 .character-detail-title {
+  text-align: center;
   font-size: 28px;
   margin-bottom: 10px;
 }
 
 /* Contenedor de la información del personaje (imagen e info) */
 .character-container {
+  max-width: 400px;
+  margin: 0 auto;
   display: flex;
-  gap: 24px;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 24px;
 }
 
 /* Estilo para la imagen del personaje */
 .character-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1/1;
   border-radius: 8px;
   object-fit: cover;
 }
 
-/* Título de la información del personaje (nombre) */
-.character-info-title {
-  font-size: 22px;
-  margin-bottom: 10px;
+.character-info p {
+  padding: 6px 0;
 }
 
 /* Título para la sección de episodios */
@@ -88,6 +91,27 @@
   text-align: center;
   color: gray;
 }
+
+@media (width >= 640px) {
+
+  .character-detail-title {
+    text-align: start;
+  }
+
+  .character-container {
+    max-width: 100%;
+    gap: 24px;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .character-image {
+    max-width: 400px;
+    aspect-ratio: inherit;
+  }
+}
+
+@media (width >= 768px) {}
 
 @media (width >= 1536px) {
   .characters-container {

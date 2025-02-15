@@ -36,7 +36,7 @@ const CharacterDetail = () => {
         <SkeletonLoaderDetail />
       ) : data ? (
         <>
-          <h1 className="character-detail-title">Character Detail</h1>
+          <h1 className="character-detail-title">{data.name}</h1>
           <div className="character-container">
             <img
               src={data.image}
@@ -44,7 +44,6 @@ const CharacterDetail = () => {
               className="character-image"
             />
             <div className="character-info">
-              <h3 className="character-info-title">{data.name}</h3>
               <p>
                 <strong>Status:</strong> {data.status}
               </p>
@@ -58,7 +57,7 @@ const CharacterDetail = () => {
                 <strong>Origin:</strong> {data.origin.name}
               </p>
               <p>
-                <strong>Location:</strong> {data.location.name}
+                <strong>Last Location:</strong> {data.location.name}
               </p>
               <p>
                 <strong>Episodes:</strong> {data.episode.length}
@@ -67,10 +66,6 @@ const CharacterDetail = () => {
                 <strong>Created:</strong> {new Date(data.created).toLocaleDateString()}
               </p>
             </div>
-          </div>
-          <h2 className="character-episodes-title">Episodes in which he appears</h2>
-          <div>
-            <p>In Development....</p>
           </div>
         </>
       ) : (
